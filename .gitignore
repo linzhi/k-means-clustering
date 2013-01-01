@@ -1,0 +1,6 @@
+*.o
+*.jpg
+*.png
+*.bmp
+*.dat
+kmeans
