@@ -1,6 +1,7 @@
 #include "opencv/cv.h"
 #include "opencv/highgui.h"
 #include "k_means.h"
+#include <cstdlib>
 #include <iostream>
 
 using namespace std;
@@ -10,14 +11,16 @@ int main(int argc, char *argv[])
     IplImage    *img = NULL;
     double      **point_set = NULL;
     int         point_num = 0;
-    int         k = 4;
+    int         k = 5;
     int         step = 0;
     int         wid, hei, dim;
 
     if (argc == 1) {
         cout << "No input file!\nUsage: " << argv[0]
-             << " [FILENAME]" << std::endl;
-    } else if (argc == 2 && (img = cvLoadImage(argv[1], 1)) != 0) {
+             << " [FILENAME] " << " k " << std::endl;
+    } else if (argc >= 2 && (img = cvLoadImage(argv[1], 1)) != 0) {
+        if (argv[2] != 0)
+            k = atoi(argv[2]);
         wid = img->width;
         hei = img->height;
         dim = img->nChannels;
