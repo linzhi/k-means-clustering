@@ -152,7 +152,7 @@ void KMeans::output_data() {
         for (p = clusters[i].begin(); p < clusters[i].end(); p++) {
             out_file << *p << " " << point_set[*p][0] * MAXPIXEL << " "
                                   << point_set[*p][1] * MAXPIXEL << " "
-                                  << point_set[*p][1] * MAXPIXEL << "\n";
+                                  << point_set[*p][2] * MAXPIXEL << "\n";
         }
 
         out_file << "\n";
